@@ -1,0 +1,24 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <input type="text" (keyup)="onSearch($event.target.value)" />
+  <ul>
+    <li *ngFor="let info of rowData">
+      <span (click)="getDetail(info)"> {{info.Name}} </span>
+    </li>
+    <ul></ul>
+  </ul>
+  <span>Total Record :{{totalRecord}}</span> |
+  <span>Total Pages : {{totalPages}}</span>
+  <div>
+    <input type="button" value="Prev" (click)="goToPrevious()" />
+    <span
+      (click)="getPage(p)"
+      *ngFor="let p of pagination"
+      style="padding: 5px;"
+      >{{p}}</span
+    >
+    <input type="button" value="Next" (click)="goToNext()" />
+  </div>
+</div>
+
+{{rowDetail?.Description}}
